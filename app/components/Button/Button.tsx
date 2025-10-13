@@ -3,16 +3,23 @@ export type ButtonProps = {
   className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({ children, className, ...props }: ButtonProps) => {
-  return (
-    <button
-      className={`bg-primary rounded-[8px] px-[32px] py-[12px] text-white cursor-pointer transition-colors hover:bg-primary/80 border-none ${
-        className || ""
-      }`}
-      {...props}
-    >
-      {children}
-    </button>
+const Button = ({ children, className, disabled, ...rest }: ButtonProps) => {
+  const generalStyle = "rounded-md px-6 py-2";
+
+  const Btn = (classes: string) => {
+    return (
+      <button
+        className={`${generalStyle} ${classes} ${className || ""}`}
+        disabled={disabled}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  };
+
+  return Btn(
+    disabled ? "bg-bg-disabled text-text-disabled" : "bg-primary text-white"
   );
 };
 
