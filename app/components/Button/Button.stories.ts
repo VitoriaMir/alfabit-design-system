@@ -1,0 +1,23 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import Button, { ButtonProps } from "./Button";
+
+const meta: Meta<ButtonProps> = {
+  title: "Molecules/Button",
+  component: Button,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "This is a button component",
+      },
+    },
+  },
+};
+
+export default meta;
+
+export const Primary: StoryObj<typeof Button> = {
+  args: {
+    children: "Botão",
+  },
+};
