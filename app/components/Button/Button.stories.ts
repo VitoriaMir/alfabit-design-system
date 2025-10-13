@@ -21,3 +21,10 @@ export const Primary: StoryObj<typeof Button> = {
     children: "Botão",
   },
 };
+
+export const Violet: StoryObj<typeof Button> = {
+  args: {
+    children: "Botão",
+    className: "theme-violet",
+  },
+};
