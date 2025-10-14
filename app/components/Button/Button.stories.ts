@@ -7,13 +7,13 @@ const meta: Meta<ButtonProps> = {
   tags: ["autodocs"],
   argTypes: {
     children: {
-      type: 'string',
+      type: "string",
     },
     disabled: {
-      type: 'boolean',
+      type: "boolean",
     },
     className: {
-      type: 'string',
+      type: "string",
     },
   },
   parameters: {
