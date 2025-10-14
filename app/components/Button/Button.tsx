@@ -19,7 +19,7 @@ const Button = ({ children, className, disabled, ...rest }: ButtonProps) => {
   };
 
   return Btn(
-    disabled ? "bg-bg-disabled text-text-disabled" : "bg-primary text-white"
+    disabled ? "bg-disabled text-disabled" : "bg-primary text-white"
   );
 };
 

@@ -5,6 +5,17 @@ const meta: Meta<ButtonProps> = {
   title: "Molecules/Button",
   component: Button,
   tags: ["autodocs"],
+  argTypes: {
+    children: {
+      type: 'string',
+    },
+    disabled: {
+      type: 'boolean',
+    },
+    className: {
+      type: 'string',
+    },
+  },
   parameters: {
     docs: {
       description: {
