@@ -19,17 +19,19 @@ const Button = ({ children, className, disabled, ...rest }: ButtonProps) => {
     );
   };
 
-  const getVariant = (variant: ButtonProps['variant'] = 'primary') => {
+  const getVariant = (variant: ButtonProps["variant"] = "primary") => {
     switch (variant) {
-      case 'primary':
-        return disabled ? 'bg-disabled text-disabled' : 'bg-primary text-white'
-      case 'secondary':
-        return disabled ? 'bg-disabled text-disabled' : 'bg-quaternary text-primary'
-      case 'tertiary':
+      case "primary":
+        return disabled ? "bg-disabled text-disabled" : "bg-primary text-white";
+      case "secondary":
+        return disabled
+          ? "bg-disabled text-disabled"
+          : "bg-quaternary text-primary";
+      case "tertiary":
       default:
-        return disabled ? 'text-disabled' : 'text-primary'
+        return disabled ? "text-disabled" : "text-primary";
     }
-  }
+  };
 
   return Btn(getVariant(rest.variant));
 };
