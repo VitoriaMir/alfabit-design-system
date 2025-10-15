@@ -35,6 +35,31 @@ O componente aceita as seguintes props:
 
 <Controls />
 
-## Customização
+## Variantes
 
-O botão pode ser customizado através da prop `className`, permitindo a extensão dos estilos base com classes adicionais do Tailwind ou CSS customizado.
+### Primário
+O botão primário é a principal chamada para ação em uma interface.
+
+<Canvas of={Story.Primary} />
+
+### Primário Desabilitado
+<Canvas of={Story.Disabled} />
+
+### Secundário
+O botão secundário é usado para ações alternativas ou menos importantes.
+
+<Canvas of={Story.Secondary} />
+
+### Secundário Desabilitado
+<Canvas of={Story.SecondaryDisabled} />
+
+### Terciário
+O botão terciário é usado para ações de menor destaque ou em contextos onde um visual mais sutil é necessário.
+
+<Canvas of={Story.Tertiary} />
+
+### Terciário Desabilitado
+<Canvas of={Story.TertiaryDisabled} />
+
+### Tema Violeta
+<Canvas of={Story.VioletTertiary} />

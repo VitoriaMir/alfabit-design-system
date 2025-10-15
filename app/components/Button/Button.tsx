@@ -1,5 +1,6 @@
 export type ButtonProps = {
   children: React.ReactNode;
+  variant?: "primary" | "secondary" | "tertiary";
   className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -18,7 +19,19 @@ const Button = ({ children, className, disabled, ...rest }: ButtonProps) => {
     );
   };
 
-  return Btn(disabled ? "bg-disabled text-disabled" : "bg-primary text-white");
+  const getVariant = (variant: ButtonProps['variant'] = 'primary') => {
+    switch (variant) {
+      case 'primary':
+        return disabled ? 'bg-disabled text-disabled' : 'bg-primary text-white'
+      case 'secondary':
+        return disabled ? 'bg-disabled text-disabled' : 'bg-quaternary text-primary'
+      case 'tertiary':
+      default:
+        return disabled ? 'text-disabled' : 'text-primary'
+    }
+  }
+
+  return Btn(getVariant(rest.variant));
 };
 
 export default Button;
