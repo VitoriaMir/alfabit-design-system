@@ -1,0 +1,23 @@
+import { Meta, Primary, Canvas, Controls } from "@storybook/blocks";
+import * as Story from "./TextBlock.stories";
+
+<Meta of={Story} />
+
+# Bloco de texto
+
+Este é um componente de texto que pode ser usado para exibir textos com título em uma página.
+
+## Características
+
+- **Título**: Em negrito para maior destaque
+- **Texto**: Formatação padrão para melhor legibilidade
+- **Fundo**: Cor escura para contraste
+- **Espaçamento**: Padding adequado para melhor leitura
+- **Cantos**: Arredondados para harmonia visual
+
+### Primário
+<Canvas of={Story.Primary} />
+
+## Documentação Interativa
+<Primary />
+<Controls />
