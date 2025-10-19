@@ -1,13 +1,13 @@
-import Button from "./components/Button/Button";
+import Switch from "./components/Switch/Switch";
 
-export default function Home() {
+const App = () => {
   return (
-    <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <Button>Clique Aqui</Button>
-      <p>
-        Este é o primeiro componente da aplicação. Edite <code>page.tsx</code> e{" "}
-        <code>globals.css</code> para começar.
-      </p>
-    </main>
+    <div className="h-screen mx-auto my-0 w-4/5 flex justify-center">
+      <div className="w-2/4 flex flex-col gap-1 justify-start">
+        <Switch />
+      </div>
+    </div>
   );
-}
+};
+
+export default App;
