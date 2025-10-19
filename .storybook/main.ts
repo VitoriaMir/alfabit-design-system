@@ -6,21 +6,10 @@ const config: StorybookConfig = {
     "../app/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
-    "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
-    {
-      name: "@storybook/addon-docs",
-      options: {
-        mdxPluginOptions: {
-          mdxCompileOptions: {
-            remarkPlugins: [],
-            rehypePlugins: [],
-          },
-        },
-      },
-    },
+    "@storybook/addon-links",
   ],
   framework: {
     name: "@storybook/nextjs",
