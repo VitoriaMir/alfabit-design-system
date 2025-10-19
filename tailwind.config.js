@@ -12,6 +12,11 @@ module.exports = {
             'tv': '1920px',
         },
         extend: {
+            fontSize: {
+                txl: '40px',
+                tlg: '32px',
+                tmd: '24px',
+            },
             colors: {
                 primary: 'rgba(var(--primary), <alpha-value>)',
                 secondary: 'rgba(var(--secondary), <alpha-value>)',

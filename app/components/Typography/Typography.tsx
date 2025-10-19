@@ -39,11 +39,16 @@ const Typography = ({
   children,
   element = "p",
   className,
+  variant,
+  size,
   ...rest
 }: TypographyProps) => {
   const Element = element;
   return (
-    <Element className={`${textVariants(rest)} ${className || ""}`} {...rest}>
+    <Element
+      className={`${textVariants({ variant, size })} ${className || ""}`}
+      {...rest}
+    >
       {children}
     </Element>
   );
