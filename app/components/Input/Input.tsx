@@ -1,6 +1,27 @@
+import React from "react";
+import { cva } from "class-variance-authority";
+
+const inputVariants = cva(
+  "bg-dark text-gray-primary rounded-md p-3 disabled:bg-disabled disabled:border-2 disabled:border-disabled",
+  {
+    variants: {
+      hasLabel: {
+        true: "pt-5",
+        false: "",
+      },
+    },
+    defaultVariants: {
+      hasLabel: false,
+    },
+  }
+);
+
+const labelVariants = cva("absolute pt-1 pl-3 text-xs");
+
 export type InputProps = {
   label?: string;
   multiline?: boolean;
+  className?: string;
 } & (
   | React.InputHTMLAttributes<HTMLInputElement>
   | React.TextareaHTMLAttributes<HTMLTextAreaElement>
@@ -20,14 +41,9 @@ const InputOrTextArea = (props: InputProps) => {
 const Input = ({ label, className, ...rest }: InputProps) => {
   return (
     <div className="relative">
-      {label && <label className="absolute pt-1 pl-3 text-xs">{label}</label>}
+      {label && <label className={labelVariants()}>{label}</label>}
       <InputOrTextArea
-        className={`
-          bg-dark text-gray-primary rounded-md p-3
-          disabled:bg-disabled disabled:border-2 disabled:border-disabled
-          ${label && "pt-5"}
-          ${className || ""}
-        `}
+        className={`${inputVariants({ hasLabel: !!label })} ${className || ""}`}
         {...rest}
       />
     </div>
