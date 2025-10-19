@@ -1,8 +1,12 @@
-import React from "react";
 import classNames from "classnames";
+import AvatarIcon from "./AvatarIcon";
+import AvatarImage from "./AvatarImage";
+import React from "react";
 
 export type AvatarProps = {
   size?: "xs" | "sm" | "md" | "lg";
+  image?: string;
+  descricao?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const avatarSizeMap = {
@@ -12,8 +16,20 @@ const avatarSizeMap = {
   lg: "w-9 h-9",
 };
 
-const Avatar = ({ size = "xs", className, ...rest }: AvatarProps) => {
+const Avatar = ({
+  size = "xs",
+  image,
+  descricao = "",
+  className,
+  ...rest
+}: AvatarProps) => {
   const avatarSizeClass = avatarSizeMap[size];
+
+  const avatarComponent = image ? (
+    <AvatarImage src={image} altDescription={descricao} />
+  ) : (
+    <AvatarIcon />
+  );
 
   return (
     <div
@@ -23,7 +39,9 @@ const Avatar = ({ size = "xs", className, ...rest }: AvatarProps) => {
         className
       )}
       {...rest}
-    ></div>
+    >
+      {avatarComponent}
+    </div>
   );
 };
 

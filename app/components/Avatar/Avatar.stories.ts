@@ -4,13 +4,11 @@ import { Meta, StoryObj } from "@storybook/react";
 import Avatar, { type AvatarProps } from "./Avatar";
 
 const meta: Meta<AvatarProps> = {
-  title: "Molecules/Avatar",
+  title: "Atoms/Avatar",
   component: Avatar,
   argTypes: {
-    size: {
-      control: "select",
-      options: ["xs", "sm", "md", "lg"],
-    },
+    className: { type: "string" },
+    size: { type: "string" },
   },
 };
 
@@ -20,26 +18,9 @@ export const Primary: StoryObj<AvatarProps> = {
   args: {},
 };
 
-export const ExtraSmall: StoryObj<AvatarProps> = {
-  args: {
-    size: "xs",
-  },
-};
-
-export const Small: StoryObj<AvatarProps> = {
-  args: {
-    size: "sm",
-  },
-};
-
-export const Medium: StoryObj<AvatarProps> = {
-  args: {
-    size: "md",
-  },
-};
-
-export const Large: StoryObj<AvatarProps> = {
+export const AvatarImage: StoryObj<AvatarProps> = {
   args: {
     size: "lg",
+    image: "https://placehold.co/400x400.png",
   },
 };
