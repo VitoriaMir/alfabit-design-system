@@ -52,28 +52,29 @@ const Dropdown = ({ list, className, ...rest }: DropdownProps) => {
               filteredItem.map((item) => (
                 <Combobox.Option
                   className={({ active }) =>
-                    `${dropdownStyles.option} ${
-                      active ? "bg-dark text-gray-primary" : "text-gray-900"
-                    }`
+                    `${dropdownStyles.option} ${active ? "bg-gray-100" : ""}`
                   }
                   key={item}
                   value={item}
                 >
                   {({ selected }) => (
-                    <>
-                      {selected ? (
-                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary">
-                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
-                        </span>
-                      ) : null}
+                    <div className="flex items-center justify-between">
                       <span
-                        className={`block truncate ${
-                          selected ? "font-medium text-primary" : "font-normal"
+                        className={`truncate ${
+                          selected
+                            ? "font-medium text-primary"
+                            : "font-normal text-gray-900"
                         }`}
                       >
                         {item}
                       </span>
-                    </>
+                      {selected && (
+                        <CheckIcon
+                          className="h-5 w-5 text-primary flex-shrink-0"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </div>
                   )}
                 </Combobox.Option>
               ))
