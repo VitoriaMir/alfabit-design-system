@@ -1,7 +1,16 @@
 {
-  "name": "alfabit-design-system",
+  "name": "alfabit-ds",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "app/components/index.ts",
+  "author": "Alfabit",
+  "license": "MIT",
+  "files": [
+    "app/globals.css",
+    "tailwind.config.js",
+    "app/components/*",
+    "public/fonts/*"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
