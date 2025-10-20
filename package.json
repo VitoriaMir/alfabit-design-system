@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "storybook": "storybook dev -p 6006",
+    "prebuild-storybook": "rm -rf node_modules/.vite",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_8ae802f88217b5e"
   },
