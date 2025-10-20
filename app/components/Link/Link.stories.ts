@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Link, { LinkProps } from "./Link";
 
 const meta: Meta<LinkProps> = {
-  title: "Molecules/Link",
+  title: "Design System/Molecules/Link",
   component: Link,
   argTypes: {
     children: {
@@ -17,6 +17,9 @@ const meta: Meta<LinkProps> = {
     },
     className: {
       type: "string",
+    },
+    onClick: {
+      action: "clicked",
     },
   },
 };

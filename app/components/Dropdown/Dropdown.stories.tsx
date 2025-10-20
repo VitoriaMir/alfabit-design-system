@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import Dropdown, { type DropdownProps } from "./Dropdown";
 
 const meta: Meta<typeof Dropdown> = {
-  title: "Molecules/Dropdown",
+  title: "Design System/Molecules/Dropdown",
   component: Dropdown,
   decorators: [
     (Story) => (
@@ -12,6 +12,20 @@ const meta: Meta<typeof Dropdown> = {
       </div>
     ),
   ],
+  argTypes: {
+    list: {
+      control: { type: "object" },
+      description: "Lista de opções para o dropdown",
+    },
+    className: {
+      type: "string",
+      control: { type: "text" },
+      description: "Classes CSS adicionais",
+    },
+    onChange: {
+      action: "selected",
+    },
+  },
 };
 
 export default meta;

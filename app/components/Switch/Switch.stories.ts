@@ -3,19 +3,26 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Switch, { type SwitchProps } from "./Switch";
 
 const meta: Meta<SwitchProps> = {
-  title: "Molecules/Switch",
+  title: "Design System/Molecules/Switch",
   component: Switch,
   argTypes: {
     defaultEnable: {
       type: "boolean",
       control: { type: "boolean" },
+      description: "Estado inicial do switch (ligado/desligado)",
     },
     disabled: {
       type: "boolean",
       control: { type: "boolean" },
+      description: "Desabilita o switch",
     },
     variant: {
+      options: ["common", "contract"],
       control: { type: "radio" },
+      description: "Variante visual do switch",
+    },
+    onChange: {
+      action: "changed",
     },
   },
 };

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Input, { InputProps } from "./Input";
 
 const meta: Meta<InputProps> = {
-  title: "Molecules/Input",
+  title: "Design System/Molecules/Input",
   component: Input,
   argTypes: {
     label: {
@@ -14,6 +14,12 @@ const meta: Meta<InputProps> = {
     },
     multiline: {
       type: "boolean",
+    },
+    onChange: {
+      action: "changed",
+    },
+    onFocus: {
+      action: "focused",
     },
   },
 };

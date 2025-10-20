@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Button, { ButtonProps } from "./Button";
 
 const meta: Meta<ButtonProps> = {
-  title: "Molecules/Button",
+  title: "Design System/Molecules/Button",
   component: Button,
   argTypes: {
     children: {
@@ -31,6 +31,9 @@ const meta: Meta<ButtonProps> = {
       control: {
         type: "text",
       },
+    },
+    onClick: {
+      action: "clicked",
     },
   },
 };

@@ -4,11 +4,21 @@ import { Meta, StoryObj } from "@storybook/react";
 import Avatar, { type AvatarProps } from "./Avatar";
 
 const meta: Meta<AvatarProps> = {
-  title: "Atoms/Avatar",
+  title: "Design System/Atoms/Avatar",
   component: Avatar,
   argTypes: {
     className: { type: "string" },
-    size: { type: "string" },
+    size: {
+      type: "string",
+      options: ["sm", "md", "lg"],
+      control: { type: "select" },
+      description: "Tamanho do avatar",
+    },
+    image: {
+      type: "string",
+      control: { type: "text" },
+      description: "URL da imagem do avatar",
+    },
   },
 };
 

@@ -8,9 +8,9 @@ import { dropdownStyles } from "./Dropdown.style";
 
 export type DropdownProps = {
   list: string[];
-};
+} & React.HTMLAttributes<HTMLDivElement>;
 
-const Dropdown = ({ list, ...rest }: DropdownProps) => {
+const Dropdown = ({ list, className, ...rest }: DropdownProps) => {
   const [selectedItem, setSelectedItem] = useState<string | null>(list[0]);
   const [query, setQuery] = useState("");
 
@@ -20,8 +20,11 @@ const Dropdown = ({ list, ...rest }: DropdownProps) => {
       : list.filter((item) => item.toLowerCase().includes(query.toLowerCase()));
 
   return (
-    <Combobox value={selectedItem} onChange={setSelectedItem} {...rest}>
-      <div className={dropdownStyles.container}>
+    <Combobox value={selectedItem} onChange={setSelectedItem}>
+      <div
+        className={`${dropdownStyles.container} ${className || ""}`}
+        {...rest}
+      >
         <div className={dropdownStyles.containerMenu}>
           <Combobox.Input
             className={dropdownStyles.input}
@@ -58,6 +61,11 @@ const Dropdown = ({ list, ...rest }: DropdownProps) => {
                 >
                   {({ selected }) => (
                     <>
+                      {selected ? (
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary">
+                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      ) : null}
                       <span
                         className={`block truncate ${
                           selected ? "font-medium text-primary" : "font-normal"
@@ -65,11 +73,6 @@ const Dropdown = ({ list, ...rest }: DropdownProps) => {
                       >
                         {item}
                       </span>
-                      {selected ? (
-                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary">
-                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
-                        </span>
-                      ) : null}
                     </>
                   )}
                 </Combobox.Option>

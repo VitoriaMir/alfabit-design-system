@@ -53,7 +53,7 @@ const ModalStoryChoice = (args: ModalProps) => {
 };
 
 const meta: Meta<typeof Modal> = {
-  title: "Molecules/Modal",
+  title: "Design System/Molecules/Modal",
   component: Modal,
   decorators: [
     (Story) => (
@@ -62,6 +62,25 @@ const meta: Meta<typeof Modal> = {
       </div>
     ),
   ],
+  argTypes: {
+    isOpen: {
+      type: "boolean",
+      control: { type: "boolean" },
+      description: "Controla se o modal está aberto ou fechado",
+    },
+    title: {
+      type: "string",
+      control: { type: "text" },
+      description: "Título do modal",
+    },
+    children: {
+      control: { type: "text" },
+      description: "Conteúdo do modal",
+    },
+    onClose: {
+      action: "closed",
+    },
+  },
 };
 
 export default meta;
