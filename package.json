@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_8ae802f88217b5e"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
@@ -34,6 +35,7 @@
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.16",
+    "chromatic": "^13.3.0",
     "eslint": "^8.51.0",
     "eslint-config-next": "^13.5.6",
     "eslint-plugin-storybook": "^0.6.15",
