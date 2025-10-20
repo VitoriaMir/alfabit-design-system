@@ -1,0 +1,36 @@
+import { Meta, Primary, Canvas, Controls } from "@storybook/blocks";
+
+import * as Story from "./Notice.stories.ts";
+
+<Meta of={Story} />
+
+# Notice
+
+O componente **Notice** é utilizado para exibir notificações e alertas ao usuário, combinando ícones, mensagens e ações.
+
+## Características
+
+- Composição de componentes menores (Box, Typography, Button)
+- Diferentes tipos: alert, success e error
+- Suporte para botões de ação
+- Botão de fechar opcional
+- Ícones contextuais
+
+## Variantes
+
+### Alert
+
+<Canvas of={Story.Alert} />
+
+### Error
+
+<Canvas of={Story.Error} />
+
+### Success
+
+<Canvas of={Story.Success} />
+
+## Documentação Interativa
+
+<Primary />
+<Controls />

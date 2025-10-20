@@ -1,10 +1,3 @@
-function toRgba(cssVariable) {
-    return ({ opacityValue }) => {
-        const color = `var(${cssVariable})`;
-        return `rgba(${color}, ${opacityValue || 1})`;
-    };
-}
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
@@ -51,23 +44,35 @@ module.exports = {
             9: 'var(--spacing-4xl) /* 56px */',
         },
         extend: {
+            fontSize: {
+                txl: '40px',
+                tlg: '32px',
+                tmd: '24px',
+            },
             colors: {
-                primary: toRgba('--primary'),
-                secondary: toRgba('--secondary'),
-                tertiary: toRgba('--tertiary'),
-                quaternary: toRgba('--quaternary'),
-                hover: toRgba('--hover'),
-                click: toRgba('--click'),
-                icon: toRgba('--icon'),
-                outline: toRgba('--outline'),
-                divider: toRgba('--divider'),
-                'bg-light': toRgba('--bg-light'),
-                'bg-dark': toRgba('--bg-dark'),
-                'bg-disabled': toRgba('--bg-disabled'),
-                'text-primary': toRgba('--text-primary'),
-                'text-secondary': toRgba('--text-secondary'),
-                'text-tertiary': toRgba('--text-tertiary'),
-                'text-disabled': toRgba('--text-disabled')
+                primary: 'rgba(var(--primary), <alpha-value>)',
+                secondary: 'rgba(var(--secondary), <alpha-value>)',
+                tertiary: 'rgba(var(--tertiary), <alpha-value>)',
+                quaternary: 'rgba(var(--quaternary), <alpha-value>)',
+                hover: 'rgba(var(--hover), <alpha-value>)',
+                click: 'rgba(var(--click), <alpha-value>)',
+                icon: 'rgba(var(--icon), <alpha-value>)',
+                outline: 'rgba(var(--outline), <alpha-value>)',
+                divider: 'rgba(var(--divider), <alpha-value>)',
+                disabled: 'rgba(var(--text-disabled), <alpha-value>)',
+            },
+            backgroundColor: {
+                light: 'rgba(var(--bg-light), <alpha-value>)',
+                dark: 'rgba(var(--bg-dark), <alpha-value>)',
+                disabled: 'rgba(var(--bg-disabled), <alpha-value>)',
+            },
+            textColor: {
+                gray: {
+                    primary: 'rgba(var(--text-primary), <alpha-value>)',
+                    secondary: 'rgba(var(--text-secondary), <alpha-value>)',
+                    tertiary: 'rgba(var(--text-tertiary), <alpha-value>)',
+                },
+                disabled: 'rgba(var(--text-disabled), <alpha-value>)',
             },
             boxShadow: {
                 sm: 'var(--shadow-sm)',
