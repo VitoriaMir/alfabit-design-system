@@ -36,10 +36,8 @@ export type ButtonProps = VariantProps<typeof buttonVariants> & {
 const Button = ({ children, className, variant, ...rest }: ButtonProps) => {
   return (
     <button
-      className={`bg-primary rounded-[8px] px-[32px] py-[12px] text-white cursor-pointer transition-colors hover:bg-primary/80 border-none ${
-        className || ""
-      }`}
-      {...props}
+      className={`${buttonVariants({ variant })} ${className || ""}`}
+      {...rest}
     >
       {children}
     </button>
