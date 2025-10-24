@@ -4,7 +4,7 @@
   "private": false,
   "main": "app/components/index.ts",
   "author": "Alfabit",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "files": [
     "app/globals.css",
     "tailwind.config.js",

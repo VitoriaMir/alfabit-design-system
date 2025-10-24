@@ -12,7 +12,7 @@
       <img src="https://img.shields.io/npm/v/alfabit-ds.svg" alt="npm version" />
     </a>
     <a href="https://github.com/VitoriaMir/alfabit-design-system/blob/main/LICENSE">
-      <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" />
+      <img src="https://img.shields.io/badge/license-GPL--3.0-blue.svg" alt="GPL-3.0 License" />
     </a>
     <a href="https://github.com/VitoriaMir/alfabit-design-system/stargazers">
       <img src="https://img.shields.io/github/stars/VitoriaMir/alfabit-design-system.svg" alt="GitHub stars" />
@@ -150,7 +150,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Contributors
 
